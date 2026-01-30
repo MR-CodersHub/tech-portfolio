@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Harish Ragav Kumar S</title>
+    <link rel="icon" href="../../assets/img/favicon.png">
+    <meta name="description" content="Create your account to access personalized features">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/extended-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join to access exclusive features</p>
+            </div>
+
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Minimum 6 characters" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password"
+                        required>
+                </div>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+                <p style="margin-top: 1rem;"><a href="../../index.html">← Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/toast.js"></script>
+    <script>
+        // Handle signup form submission
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value
+            };
+
+            // Basic validation
+            if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+                toast.error('Please fill in all fields');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                toast.error('Please enter a valid email address');
+                return;
+            }
+
+            // Password validation
+            if (formData.password.length < 6) {
+                toast.error('Password must be at least 6 characters long');
+                return;
+            }
+
+            // Password match validation
+            if (formData.password !== formData.confirmPassword) {
+                toast.error('Passwords do not match');
+                return;
+            }
+
+            // Attempt registration
+            const result = authManager.register(formData.email, formData.password, formData.name);
+
+            if (result.success) {
+                toast.success('✅ Account created successfully! Redirecting...');
+                setTimeout(() => {
+                    window.location.href = '../../dashboards/user-dashboard.html';
+                }, 1500);
+            } else {
+                toast.error(result.message || 'Registration failed. Please try again.');
+            }
+        });
+    </script>
+</body>
+
+</html>

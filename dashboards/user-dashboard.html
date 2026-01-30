@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Harish Ragav Kumar S</title>
+    <link rel="icon" href="../../assets/img/favicon.png">
+    <meta name="description" content="Your personal dashboard">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../src/css/extended-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="onepage-nav">
+        <a href="../index.html">Home</a>
+        <a href="../public/pages/about.html">About</a>
+        <a href="../public/pages/projects.html">Projects</a>
+        <a href="../public/pages/blog.html">Blog</a>
+        <a href="user-dashboard.html" class="active">Dashboard</a>
+        <a href="#" id="userLogout" style="margin-left: auto;">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </nav>
+
+    <!-- DASHBOARD CONTAINER -->
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1><i class="fas fa-user-circle"></i> User Dashboard</h1>
+            <p>Welcome back! Here's your activity overview</p>
+        </div>
+
+        <div class="dashboard-content">
+            <!-- PROFILE SUMMARY -->
+            <div class="dashboard-section">
+                <h2><i class="fas fa-id-card"></i> Profile Summary</h2>
+                <div style="padding: var(--spacing-lg);">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg);">
+                        <div>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Name</p>
+                            <p style="color: var(--text-primary); font-weight: 600;" id="userName">Loading...</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Email</p>
+                            <p style="color: var(--text-primary); font-weight: 600;" id="userEmail">Loading...</p>
+                        </div>
+                        <div>
+                            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Member Since</p>
+                            <p style="color: var(--text-primary); font-weight: 600;" id="memberSince">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK ACTIONS -->
+            <div class="dashboard-section">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); padding: var(--spacing-lg);">
+                    <a href="../public/pages/projects.html" class="btn-primary"
+                        style="text-align: center; text-decoration: none;">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="../public/pages/blog.html" class="btn-primary"
+                        style="text-align: center; text-decoration: none;">
+                        <i class="fas fa-blog"></i> Read Blog
+                    </a>
+                    <a href="../public/pages/contact.html" class="btn-primary"
+                        style="text-align: center; text-decoration: none;">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="dashboard-section">
+                <h2><i class="fas fa-history"></i> Recent Portfolio Activity</h2>
+                <div class="activity-list" id="userActivitiesList">
+                    <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                        Loading activities...
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAVED ITEMS (Placeholder for future feature) -->
+            <div class="dashboard-section">
+                <h2><i class="fas fa-bookmark"></i> Saved Items</h2>
+                <div style="padding: var(--spacing-lg); text-align: center; color: var(--text-secondary);">
+                    <i class="fas fa-inbox" style="font-size: 3rem; opacity: 0.3; margin-bottom: 1rem;"></i>
+                    <p>No saved items yet. Explore the portfolio and save your favorite projects!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/auth.js"></script>
+    <script src="../src/js/dashboard.js"></script>
+    <script>
+        // Protect user page
+        if (!authManager.protectPage()) {
+            // Will redirect if not logged in
+        } else {
+            // Render dashboard
+            dashboardManager.renderUserDashboard();
+        }
+
+        // Logout handler
+        document.getElementById('userLogout').addEventListener('click', (e) => {
+            e.preventDefault();
+            authManager.logout();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Harish Ragav Kumar S</title>
+    <link rel="icon" href="../../assets/img/favicon.png">
+    <meta name="description" content="Exciting new features coming soon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/extended-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .coming-soon-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+
+        .coming-soon-content {
+            max-width: 600px;
+        }
+
+        .coming-soon-icon {
+            font-size: 5rem;
+            color: var(--accent-primary);
+            margin-bottom: var(--spacing-xl);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .coming-soon-title {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .coming-soon-text {
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coming-soon-container">
+        <div class="coming-soon-content">
+            <div class="coming-soon-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h1 class="coming-soon-title">Coming Soon</h1>
+            <p class="coming-soon-text">
+                We're working on something exciting! This feature will be available soon.
+                Stay tuned for updates.
+            </p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="../../index.html" class="btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="contact.html" class="btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

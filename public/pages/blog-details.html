@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Harish Ragav Kumar S</title>
+    <link rel="icon" href="../../assets/img/favicon.png">
+    <meta name="description" content="Read the full article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/extended-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl) var(--spacing-xl);
+        }
+
+        .article-header {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-title {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .article-excerpt {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .article-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .article-content h2 {
+            color: var(--text-primary);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .article-content p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .article-footer {
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="onepage-nav">
+        <a href="home-1.html" class="navbar-logo">HRK.</a>
+        <div class="nav-links">
+            <a href="home-1.html">Home</a>
+            <a href="home-2.html">Digital</a>
+            <a href="about.html">About Me</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+        <div class="nav-profile" id="profileDropdown">
+            <div class="profile-icon" id="profileIcon">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-dropdown">
+                <a href="../../auth/user/login.html">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="../../auth/user/signup.html">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="../../auth/admin/admin-login.html">
+                    <i class="fas fa-shield-alt"></i> Admin Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ARTICLE CONTAINER -->
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> <span id="articleDate">January 15, 2026</span></span>
+                <span><i class="far fa-clock"></i> <span id="articleReadTime">8 min read</span></span>
+                <span><i class="far fa-user"></i> Harish Ragav Kumar S</span>
+            </div>
+            <h1 class="article-title" id="articleTitle">Building Scalable Microservices Architecture</h1>
+            <p class="article-excerpt" id="articleExcerpt">
+                Learn how to design and implement microservices that can handle millions of requests with high
+                availability and fault tolerance.
+            </p>
+        </div>
+
+        <div class="article-content" id="articleContent">
+            <h2>Introduction</h2>
+            <p>
+                Microservices architecture has become the de facto standard for building modern, scalable applications.
+                In this article, I'll share insights from my experience building production microservices systems that
+                handle millions of requests daily.
+            </p>
+
+            <h2>Key Principles</h2>
+            <p>
+                When designing microservices, several core principles guide the architecture:
+            </p>
+            <ul>
+                <li><strong>Single Responsibility:</strong> Each service should have one clear purpose</li>
+                <li><strong>Loose Coupling:</strong> Services should be independent and communicate through well-defined
+                    APIs</li>
+                <li><strong>High Cohesion:</strong> Related functionality should be grouped together</li>
+                <li><strong>Resilience:</strong> Services must handle failures gracefully</li>
+            </ul>
+
+            <h2>Implementation Strategies</h2>
+            <p>
+                Based on real-world experience, here are proven strategies for implementing microservices:
+            </p>
+            <ol>
+                <li>Start with a monolith and extract services gradually</li>
+                <li>Use API gateways for routing and authentication</li>
+                <li>Implement circuit breakers for fault tolerance</li>
+                <li>Use message queues for asynchronous communication</li>
+                <li>Monitor everything with distributed tracing</li>
+            </ol>
+
+            <h2>Conclusion</h2>
+            <p>
+                Building scalable microservices requires careful planning, strong architectural principles, and
+                continuous monitoring. The investment in proper design pays dividends in maintainability and
+                scalability.
+            </p>
+        </div>
+
+        <div class="article-footer">
+            <a href="blog.html" class="btn-secondary">← Back to Blog</a>
+        </div>
+    </div>
+
+    <!-- ENHANCED FOOTER -->
+    <footer class="footer-enhanced">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Harish Ragav Kumar S</h3>
+                <p>
+                    Senior Software Engineer specializing in scalable systems, full-stack development,
+                    and technical architecture.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="home-1.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="home-2.html"><i class="fas fa-chevron-right"></i> Digital</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Work</a></li>
+                    <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                    <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="mailto:workharishragav@gmail.com">
+                            <i class="fas fa-envelope"></i> workharishragav@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+1234567890">
+                            <i class="fas fa-phone"></i> +1 (234) 567-890
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-map-marker-alt"></i> Available Remotely
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p style="color: var(--text-secondary); margin: 0; text-align: center; justify-content: center;">
+                © 2026 Deveoped by MR CodersHub. All rights reserved.
+            </p>
+        </div>
+        <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+    <script src="../../src/js/smooth-scroll.js"></script>
+    <script src="../../src/js/profile-dropdown.js"></script>
+    <script src="../../src/js/blog.js"></script>
+    <script>
+        // Load article based on URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            if (postId) {
+                const post = blogManager.getPostById(postId);
+                if (post) {
+                    document.getElementById('articleTitle').textContent = post.title;
+                    document.getElementById('articleExcerpt').textContent = post.excerpt;
+                    document.getElementById('articleDate').textContent = blogManager.formatDate(post.date);
+                    document.getElementById('articleReadTime').textContent = post.readTime;
+                    document.title = `${post.title} - Harish Ragav Kumar S`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
