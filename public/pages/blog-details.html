@@ -92,16 +92,15 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
     <nav class="onepage-nav">
         <a href="home-1.html" class="navbar-logo">HRK.</a>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="home-1.html">Home</a>
             <a href="home-2.html">Digital</a>
             <a href="about.html">About Me</a>
             <a href="skills.html">Skills</a>
             <a href="projects.html">Projects</a>
-            <a href="blog.html">Blog</a>
+            <a href="blog.html" class="active">Blog</a>
             <a href="contact.html">Contact Me</a>
         </div>
         <div class="nav-profile" id="profileDropdown">
@@ -109,6 +108,7 @@
                 <i class="fas fa-user"></i>
             </div>
             <div class="profile-dropdown">
+                <!-- Content will be dynamically loaded by JavaScript -->
                 <a href="../../auth/user/login.html">
                     <i class="fas fa-sign-in-alt"></i> Login
                 </a>
@@ -121,6 +121,9 @@
                 </a>
             </div>
         </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
     <!-- ARTICLE CONTAINER -->
@@ -183,14 +186,12 @@
         </div>
     </div>
 
-    <!-- ENHANCED FOOTER -->
     <footer class="footer-enhanced">
         <div class="footer-grid">
             <div class="footer-column">
-                <h3>Harish Ragav Kumar S</h3>
+                <a href="./index.html" class="footer-column-header">HRK.</a>
                 <p>
-                    Senior Software Engineer specializing in scalable systems, full-stack development,
-                    and technical architecture.
+                    Let's connect and create something amazing together!
                 </p>
                 <div class="footer-socials">
                     <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -204,7 +205,7 @@
                 <ul class="footer-links">
                     <li><a href="home-1.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                     <li><a href="home-2.html"><i class="fas fa-chevron-right"></i> Digital</a></li>
-                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
                     <li><a href="services.html"><i class="fas fa-chevron-right"></i> Work</a></li>
                     <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
                     <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
@@ -251,6 +252,7 @@
     <script src="../../src/js/smooth-scroll.js"></script>
     <script src="../../src/js/profile-dropdown.js"></script>
     <script src="../../src/js/blog.js"></script>
+    <script src="../../src/js/responsive.js"></script>
     <script>
         // Load article based on URL parameter
         document.addEventListener('DOMContentLoaded', () => {
