@@ -140,6 +140,7 @@ class DashboardManager {
 
     // Render Admin Dashboard with REAL data only
     renderAdminDashboard() {
+        this.initResponsiveNav();
         const stats = this.getStats();
         const activities = this.getRecentActivities(10);
         const contacts = this.getRecentContacts(10);
@@ -227,6 +228,7 @@ class DashboardManager {
 
     // Render User Dashboard with REAL data only
     renderUserDashboard() {
+        this.initResponsiveNav();
         const user = authManager.getCurrentUser();
         if (!user) {
             window.location.href = '../auth/user/login.html';
@@ -268,6 +270,55 @@ class DashboardManager {
                     </div>
                 `).join('');
             }
+        }
+    }
+
+    // Initialize responsive navigation for dashboards
+    initResponsiveNav() {
+        const toggle = document.getElementById('dashboardMenuToggle');
+        const menu = document.getElementById('dashboardNavMenu');
+
+        if (toggle && menu) {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('active');
+
+                // Toggle icon
+                const icon = toggle.querySelector('i');
+                if (icon) {
+                    if (menu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                    menu.classList.remove('active');
+                    const icon = toggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+
+            // Close menu when clicking a link
+            menu.querySelectorAll('.dashboard-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    const icon = toggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
         }
     }
 }

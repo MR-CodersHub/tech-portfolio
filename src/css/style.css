@@ -1032,6 +1032,15 @@ nav a.active::after {
     .about-grid .btn-secondary {
         margin: 0 auto;
     }
+
+    .section-label,
+    .section-title,
+    .section-subtitle {
+        text-align: center !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .card-grid {
@@ -1050,6 +1059,15 @@ nav a.active::after {
     margin-bottom: var(--spacing-sm);
 }
 
+@media (max-width: 968px) {
+    .section-label {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .section-title {
     font-size: var(--font-size-3xl);
     font-weight: 700;
@@ -1064,7 +1082,6 @@ nav a.active::after {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-xl);
-    max-width: 700px;
 }
 
 /* Standalone Page Headings */
@@ -1130,6 +1147,21 @@ nav a.active::after {
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
 }
 
 /* About Section - One Page */
@@ -1280,6 +1312,30 @@ nav a.active::after {
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
     border-color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        text-align: center;
+        align-items: center;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .project-tech {
+        justify-content: center;
+    }
+
+    .project-features {
+        text-align: left;
+        /* Keep features left aligned for better readability */
+        display: inline-block;
+        margin: 0 auto;
+    }
 }
 
 .project-header {
@@ -1537,6 +1593,20 @@ nav a.active::after {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
+}
+
+@media (max-width: 600px) {
+    .contact-form-onepage {
+        padding: var(--spacing-lg);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-onepage .btn-primary {
+        width: 100%;
+    }
 }
 
 /* Footer - One Page */

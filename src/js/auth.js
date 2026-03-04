@@ -87,7 +87,7 @@ class AuthManager {
     updateUIState() {
         const user = this.getCurrentUser();
         const profileDropdown = document.getElementById('profileDropdown');
-        
+
         if (!profileDropdown) return;
 
         if (user) {
@@ -175,6 +175,24 @@ class AuthManager {
         }
 
         return true;
+    }
+
+    // Initialize password toggle visibility
+    initPasswordToggle() {
+        const toggleButtons = document.querySelectorAll('.toggle-password');
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const passwordInput = button.previousElementSibling;
+                if (!passwordInput) return;
+
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Toggle icon
+                button.classList.toggle('fa-eye');
+                button.classList.toggle('fa-eye-slash');
+            });
+        });
     }
 }
 

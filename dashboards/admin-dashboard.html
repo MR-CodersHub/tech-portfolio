@@ -22,7 +22,11 @@
             <span class="dashboard-badge">Admin Panel</span>
         </div>
 
-        <div class="dashboard-nav-menu">
+        <button class="dashboard-menu-toggle" id="dashboardMenuToggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="dashboard-nav-menu" id="dashboardNavMenu">
             <a href="admin-dashboard.html" class="dashboard-nav-link active">
                 <i class="fas fa-chart-line"></i> Overview
             </a>
@@ -35,13 +39,11 @@
             <a href="../index.html" class="dashboard-nav-link">
                 <i class="fas fa-external-link-alt"></i> View Site
             </a>
-        </div>
-
-        <div class="dashboard-user-actions">
             <a href="#" id="adminLogout" class="dashboard-logout-btn">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </div>
+
     </nav>
 
     <!-- DASHBOARD CONTAINER -->
@@ -150,7 +152,7 @@
     <footer class="footer-enhanced">
         <div class="footer-grid">
             <div class="footer-column">
-                <a href="../index.html" class="footer-column-header">HRK.</a>
+                <a href="../public/pages/home-1.html" class="footer-column-header">HRK.</a>
                 <p>
                     Let's connect and create something amazing together!
                 </p>
@@ -165,7 +167,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="../public/pages/home-1.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="../public/pages/home-2.html"><i class="fas fa-chevron-right"></i> Digital</a></li>
+                    <li><a href="../public/pages/home-2.html"><i class="fas fa-chevron-right"></i> Home2</a></li>
                     <li><a href="../public/pages/about.html"><i class="fas fa-chevron-right"></i> About</a></li>
                     <li><a href="../public/pages/services.html"><i class="fas fa-chevron-right"></i> Work</a></li>
                     <li><a href="../public/pages/projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
@@ -206,7 +208,7 @@
         </div>
         <div class="footer-bottom">
             <p style="color: var(--text-secondary); margin: 0; text-align: center; justify-content: center;">
-                © 2026 Deveoped by MR CodersHub. All rights reserved.
+                © 2026 All rights reserved.
             </p>
         </div>
         <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
